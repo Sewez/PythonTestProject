@@ -14,7 +14,7 @@
 # thing.apple()
 # thing2.apple()
 
-class Song():
+class Song(object):
 	
 	
 	def __init__(self, lyrics):
