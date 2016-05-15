@@ -16,6 +16,8 @@ class employee(object):
 class company(object):
 	def __init__(self, employees):
 		self.staff = employees
+		# Counter for iteratble 
+		self.count = -1
 		
 	def get_employee_salary(self, emp_name):
 		for emp in self.staff:
@@ -24,6 +26,17 @@ class company(object):
 
 		return -1
 		
+	def __iter__(self):
+		return self
+	
+	def next(self):
+		self.count += 1
+		if self.count < len(self.staff):
+			return self.staff[self.count]
+		else:
+			self.count = -1
+			raise StopIteration
+	
 	def __str__(self):
 		return "\n".join(sorted(["Name: %s | Salary: %s " % (x.name, x.salary) for x in self.staff]))
 
@@ -37,6 +50,9 @@ medhat = employee("Medhat", 5000)
 a_company = company([amasha, ahmed, osama, gamal, medhat])
 
 print a_company
+
+for e in a_company: 
+	print e.salary
 
 # def searchlist(listtosearch, keyword):
     # for index, item in enumerate(listtosearch):
