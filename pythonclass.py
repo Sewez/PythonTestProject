@@ -15,8 +15,7 @@
 # thing2.apple()
 
 class Song(object):
-	
-	
+
 	def __init__(self, lyrics):
 		self.lyrics = lyrics
 		
@@ -31,5 +30,13 @@ happy_bday = Song(["Happy birthday to you",
 bulls_on_parade = Song(["They rally around tha family", 
 						"With pockets full of shells"])
 						
-happy_bday.sing_me_a_song()
-bulls_on_parade.sing_me_a_song()
+#happy_bday.sing_me_a_song()
+#bulls_on_parade.sing_me_a_song()
+with open("hello.txt", 'a+') as f:
+	for line in f.readlines():
+		print line,
+	listToWrite = [x for x in range(10)]
+	f.writelines("New line")
+
+	for x in listToWrite:
+		f.write(str(x))
