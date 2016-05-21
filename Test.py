@@ -11,7 +11,7 @@ __author__ = 'AeroSpace'
 # 	#print x
 # 	tempdata[len(tempdata)-i-1] = temp
 #
-# 	if i >= len(tempdata)/2:
+# 	if i >= (len(tempdata)/2)-1:
 # 		break
 #
 # print tempdata
